@@ -1,0 +1,119 @@
+version: "3.1"
+
+nlu:
+
+- intent: mental_assistance
+  examples: |
+    - I need help.
+    - Suicide
+    - How suicidal are you?
+    - Kill myself
+    - I want to kill myself
+    - I'm feeling intoxicated
+    - Toxicity
+    - Mental issues
+    - Feeling psycho
+    - I feel overwhelmed and anxious, and I don't know what to do
+    - I've been feeling down and hopeless lately and I need help
+    - I've been experiencing intense mood swings and it's affecting my daily life
+    - I'm having trouble sleeping and it's impacting my ability to function
+    - I've been having thoughts of self-harm and I need someone to talk to
+    - I'm feeling overwhelmed by stress and it's affecting my relationships
+    - I've been experiencing intrusive thoughts and they're starting to scare me
+    - I'm struggling with my self-esteem and I need help to boost my confidence
+    - I've been feeling isolated and disconnected from others, and I need support
+    - I'm experiencing symptoms of depression and I don't know where to turn
+
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+- intent: goodbye
+  examples: |
+    - good afternoon
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+    - vincent
+    - vincent-mcvincent
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+- intent: request_names
+  examples: |
+    - i want to give you my name
+    - give name
+    - you need to know my name
+    - do you know my name?
+
+# STORE TO MONGODB

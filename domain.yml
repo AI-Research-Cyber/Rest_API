@@ -1,0 +1,82 @@
+version: "3.1"
+
+intents:
+- greet
+- deny
+- request_names
+- goodbye
+- affirm
+- mood_great
+- mood_unhappy
+- bot_challenge
+- mental_assistance
+forms:
+  name_form:
+    required_slots:
+      - first_name
+      - last_name
+slots:
+  first_name:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+         - active_loop: name_form
+           requested_slot: first_name
+  last_name:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+         - active_loop: name_form
+           requested_slot: last_name
+responses:
+  utter_greet:
+  - text: Hey! How are you?
+
+  utter_mental_assistance:
+  - text: "Here are some advice:
+  Reach out for help: If you're feeling overwhelmed or struggling with your mental health, don't hesitate to reach out for support from family, friends, or mental health professionals. Talking about your feelings and experiences with others can help you process your emotions and feel more supported.
+
+Practice self-care: Take care of your physical and emotional well-being by eating a healthy diet, getting enough sleep, and engaging in physical activity. It's also important to take breaks when you need them and engage in activities you enjoy.
+
+Manage stress: Stress can have a significant impact on mental health, so it's important to find ways to manage stress in your life. This might involve practicing relaxation techniques, such as deep breathing or meditation, or finding ways to reduce stress, such as through exercise or time management."
+  
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+  utter_ask_first_name:
+  - text: What is your first name?
+
+  utter_ask_last_name:
+  - text: So {first_name}, what is your last name?
+
+  utter_submit:
+  - text: Ok. Thanks!
+
+  utter_slots_values:
+  - text: I will remember that your name is {first_name} {last_name}!
+
+actions:
+- utter_greet
+- utter_slots_values
+- utter_submit
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
