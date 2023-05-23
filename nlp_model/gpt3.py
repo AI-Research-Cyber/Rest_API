@@ -26,11 +26,12 @@ class chatModel():
 
 
     def respond(self, chatlog, personality_index):
-
-        messages = [{"role": "user", "content": self.personalities[personality_index]}]
-        messages += [{'role': 'assistant', 'content': x.replace('Bot:', '')} if (i % 2) else ({'role': 'user', 'content': x.replace('You:', '')}) for i, x in enumerate(chatlog) ]
-
+        print(chatlog)
+        messages = [{"role": "system", "content": self.personalities[personality_index]}]
+        #  [{'Sender': 'ME', 'message': 'Hi'}, {'Sender': 'bot', 'message': 'How can I help?'}]*//
         
+        messages += [{'role': 'assistant', 'content': x['message'].replace('Bot:', '')} if (x['sender'] == "bot") else ({'role': 'user', 'content': x['message'].replace('You:', '')}) for x in chatlog ]
+
         response = openai.ChatCompletion.create(
             
             model ="gpt-3.5-turbo",
