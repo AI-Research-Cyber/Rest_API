@@ -71,11 +71,20 @@ def chat(request: chatRequest, model: chatModel = Depends(get_model)):
         answer = answer
     )
 
-
 @app.post("/doctor", response_model= chatResponse)
 def chat(request: chatRequest, model: chatModel = Depends(get_model)):
     print(request)
     answer = model.respond(request.chatlog, 4)
+    
+    return chatResponse(
+       
+        answer = answer
+    )
+
+@app.post("/wikibot", response_model= chatResponse)
+def chat(request: chatRequest, model: chatModel = Depends(get_model)):
+    print(request)
+    answer = model.respond(request.chatlog, -1)
     
     return chatResponse(
        

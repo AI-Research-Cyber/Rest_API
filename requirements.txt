@@ -1,3 +1,6 @@
 openai
 uvicorn
 python-dotenv
+langchain
+FAISS-gpu
+sentence_transformers
