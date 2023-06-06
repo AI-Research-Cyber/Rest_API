@@ -11,7 +11,7 @@ from langchain.vectorstores import FAISS
 from langchain.embeddings import HuggingFaceEmbeddings
 from langchain.chat_models import ChatOpenAI
 
-embeddings = HuggingFaceEmbeddings()
+embeddings = HuggingFaceEmbeddings() 
 
 def create_db_from_urls(urls: str) -> FAISS:
     
