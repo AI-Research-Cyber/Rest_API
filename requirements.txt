@@ -5,4 +5,5 @@ langchain
 FAISS-cpu
 sentence_transformers
 pandas
+langchain
 BeautifulSoup4
