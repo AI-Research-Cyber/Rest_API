@@ -10,8 +10,8 @@ from nlp_model.gpt3 import chatModel, get_model
 
 app = FastAPI()
 
-origins = [
-    "*"
+origins = [ #we didnt block any api request 
+    "*" #all api addresses are accepted
 ]
 
 app.add_middleware(
@@ -25,7 +25,7 @@ app.add_middleware(
 
 class chatRequest(BaseModel):
     chatlog: List
-    
+    # [{"Sender", "Date", "message"}, {}]
 class chatResponse(BaseModel):
     answer: str
 
